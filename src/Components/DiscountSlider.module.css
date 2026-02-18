@@ -6,10 +6,10 @@
     border-radius: 20px  ;
 }
 .discountCard1 {
-  background: url("src/assets/img/discountCard/card1.png");
+  background: url("assets/img/discountCard/card1.png");
 }
 .discountCard2 {
-  background: url("src/assets/img/discountCard/card2.png");
+  background: url("assets/img/discountCard/card2.png");
 }
 /* 
 .swiper-pagination {

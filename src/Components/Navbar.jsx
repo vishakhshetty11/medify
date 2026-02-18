@@ -62,9 +62,9 @@ const Navbar = () => {
                             </Menu>
                         </Box>
                         <Link>
-                            <img src="src/assets/Logo.png" alt="Logo" className={styles.logoImage} />
+                            <img src="assets/Logo.png" alt="Logo" className={styles.logoImage} />
                         </Link>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "center", gap:"10px" } }}>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "center", gap:"" } }}>
                             {pages.map((page) => (
                                 <Button className={styles.pageName}
                                     key={page}

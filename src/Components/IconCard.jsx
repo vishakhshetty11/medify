@@ -6,7 +6,7 @@ function IconCard({ title }) {
         <Link className={styles.iconLink}>
             <div className={styles.iconCardMainDiv}>
                 <div>
-                    <img className={styles.iconCardImage} src={`src/assets/img/CardIcon/${title}.png`} alt={title} />
+                    <img className={styles.iconCardImage} src={`assets/img/CardIcon/${title}.png`} alt={title} />
                 </div>
                 <h4 className={styles.iconTitle}>{title}</h4>
             </div>
