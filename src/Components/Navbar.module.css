@@ -1,0 +1,11 @@
+.mainNavDiv{
+    position: absolute;
+    width: 100%;
+}
+.logoImage{
+    width: 100px !important;
+}
+.pageName{
+    text-transform: none !important;
+    color: black !important;
+}

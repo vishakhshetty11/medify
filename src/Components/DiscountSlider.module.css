@@ -1,0 +1,18 @@
+.discMainCard {
+  margin: 150px 50px 50px;
+}
+.discountCard1 ,.discountCard2{
+    height: 200px;
+    border-radius: 20px  ;
+}
+.discountCard1 {
+  background: url("src/assets/img/discountCard/card1.png");
+}
+.discountCard2 {
+  background: url("src/assets/img/discountCard/card2.png");
+}
+/* 
+.swiper-pagination {
+  bottom: -20 !important;
+} */
+

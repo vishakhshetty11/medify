@@ -1,0 +1,20 @@
+.iconLink{
+    text-decoration: none;
+    color: #ABB6C7;
+    font-size: 15px;
+    font-weight: 400;
+}
+.iconCardMainDiv {    
+    width: 150px;
+    background-color: #fafbfe;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0;
+}
+.iconCardImage {
+  width: 50px;
+}
+.iconTitle{
+    margin-top: 0;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,47 @@
+.mainHeroDiv {
+  min-height: 500px;
+  padding: 16px 8px;
+  background: linear-gradient(to right, #e7f0ff, #f4f8ff);
+}
+.heroContent {
+  position: absolute;
+  top: 140px;
+  left: 135px;
+  max-width: 400px;
+}
+.subHeading {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+.mainHeading {
+  font-weight: 500;
+  font-size: 31px;
+  letter-spacing: 2%;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.hilightHeading{
+    color: var(--primary-color);
+}
+.heroPara{
+    color: #5C6169;
+    font-size: 15px;
+}
+.heroImage {
+  width: 400px;
+  position: absolute;
+  top: 82px;
+  right: 70px;
+}
+
+@media (max-width: 950px) {
+  .heroImage {
+    display: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .heroContent {
+    left: 20px;
+  }
+}

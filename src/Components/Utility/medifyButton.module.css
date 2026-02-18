@@ -1,0 +1,9 @@
+.primaryButton {
+  background-color: var(--primary-color);
+  padding: 10px 16px;
+  border-radius: 8px;
+  height: 40px;
+  margin: auto 0;
+  border: none;
+}
+

@@ -1,0 +1,18 @@
+.SpecializationDiv{
+    background: linear-gradient(to right, #e7f0ff, #f4f8ff);
+    padding: 40px 20px;
+}
+.specialHeading{
+    text-align: center;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0;
+}
+.innerSpecialDiv{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}

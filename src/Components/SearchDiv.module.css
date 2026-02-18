@@ -1,0 +1,14 @@
+
+#searchDiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+}
+#state{
+    min-width: 30%;
+}
+#city{
+    min-width: 30%;
+}
