@@ -23,7 +23,7 @@ function SearchDiv() {
     }
     const getCity = async (States) => {
         try {
-            const resp = await fetch(`https://meddata-backend.onrender.com/cities/:${States}`)
+            const resp = await fetch(`https://meddata-backend.onrender.com/cities/${States}`)
             if (!resp.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -43,7 +43,7 @@ function SearchDiv() {
     }, [selectedState])
     return (
         <div id={styles.searchDiv}>
-            <div id={styles.state}>
+            <div id='state' className={styles.state}>
                 <TextField select value={selectedState} onChange={(e) => setSelectedState(e.target.value)}
                     fullWidth size="medium" variant="outlined"
                     SelectProps={{
@@ -81,7 +81,7 @@ function SearchDiv() {
                     ))}
                 </TextField>
             </div>
-            <div id={styles.city}>
+            <div id='city' className={styles.city}>
                 <TextField select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}
                     fullWidth size="medium" variant="outlined" disabled={selectedState === "" ? true : false}
                     SelectProps={{

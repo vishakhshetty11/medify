@@ -6,9 +6,9 @@
     justify-content: center;
     flex-direction: row;
 }
-#state{
+.state{
     min-width: 30%;
 }
-#city{
+.city{
     min-width: 30%;
 }
