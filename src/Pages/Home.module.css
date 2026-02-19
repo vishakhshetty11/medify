@@ -1,5 +1,5 @@
 .SpecializationDiv{
-    background: linear-gradient(to right, #e7f0ff, #f4f8ff);
+    background: var(--light-blue);
     padding: 40px 20px;
 }
 .specialHeading{

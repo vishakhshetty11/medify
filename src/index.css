@@ -12,6 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --primary-color: #2aa8ff;
+  --light-blue: linear-gradient(to right, #e7f0ff, #f4f8ff);
 }
 body {
   margin: 0;
@@ -19,4 +20,7 @@ body {
   place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+}
+a {
+  text-decoration: none;
 }

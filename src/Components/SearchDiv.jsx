@@ -3,7 +3,7 @@ import styles from "./SearchDiv.module.css"
 import { TextField, MenuItem, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MedifyButton from './Utility/MedifyButton';
-function SearchDiv() {
+function SearchDiv({ fetchHospital }) {
     const [selectedState, setSelectedState] = useState("");
     const [selectedCity, setSelectedCity] = useState("");
     const [state, setState] = useState([]);
@@ -39,8 +39,18 @@ function SearchDiv() {
     }, []);
 
     useEffect(() => {
-        getCity(selectedState);
+        if (selectedState.trim() != "") {
+            getCity(selectedState);
+        }
     }, [selectedState])
+    const handleClick = () => {
+        if (selectedState.trim() !== "" && selectedCity.trim() !== "") {
+            fetchHospital(selectedState, selectedCity)
+        }
+        else {
+            alert("Select Both State and City");
+        }
+    }
     return (
         <div id={styles.searchDiv}>
             <div id='state' className={styles.state}>
@@ -121,7 +131,7 @@ function SearchDiv() {
                 </TextField>
             </div>
             <div id={styles.searchButton}>
-                <MedifyButton title="Search" />
+                <button type="Submit" id='searchBtn' className={styles.submitButton} onClick={handleClick} >Search</button>
             </div>
         </div>
     )

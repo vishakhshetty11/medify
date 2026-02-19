@@ -1,0 +1,18 @@
+.HospitalMainCard{
+    background-color: 10px;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+}
+.imageContainer{
+    padding: 15px 10px;
+    background-color: #8bcfff;
+     width: 100px;
+     text-align: center;
+     border-radius: 50%;
+}
+.cardImage{
+    width: 80px;
+    height: 80px;
+}

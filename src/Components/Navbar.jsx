@@ -52,9 +52,11 @@ const Navbar = () => {
                                 sx={{ display: { xs: 'block', md: 'none' } }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem className={styles.pageName} key={page} onClick={handleCloseNavMenu}>
-                                        <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                                    </MenuItem>
+                                    <Link to="/Hospitals" key={page}>
+                                        <MenuItem className={styles.pageName} key={page} onClick={handleCloseNavMenu}>
+                                            <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                        </MenuItem>
+                                    </Link>
                                 ))}
                                 <MenuItem >
                                     <MedifyButton title="My Bookings" />
@@ -64,11 +66,10 @@ const Navbar = () => {
                         <Link>
                             <img src="assets/Logo.png" alt="Logo" className={styles.logoImage} />
                         </Link>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "center", gap:"" } }}>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "center", gap: "" } }}>
                             {pages.map((page) => (
                                 <Button className={styles.pageName}
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
+                                    key={page} component={Link} to="/hospitals"
                                     sx={{ my: 2, color: 'white', display: 'block' }}
                                 >
                                     {page}
