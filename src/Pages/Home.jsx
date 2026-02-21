@@ -14,8 +14,8 @@ function Home() {
                 <h2 className={styles.specialHeading}>Find by specialisation</h2>
                 <div className={styles.innerSpecialDiv}>
                     {
-                        cardTitle.map(title => (
-                            <IconCard title={title} />
+                        cardTitle.map((title, index) => (
+                            <IconCard key={index} title={title} />
                         ))
                     }
                 </div>

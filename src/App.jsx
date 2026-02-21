@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "hospitals",
+        path: "hospitals/:state?/:city?",
         element: <Hospitals />
       },
       {

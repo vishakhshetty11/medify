@@ -52,7 +52,7 @@ const Navbar = () => {
                                 sx={{ display: { xs: 'block', md: 'none' } }}
                             >
                                 {pages.map((page) => (
-                                    <Link to="/Hospitals" key={page}>
+                                    <Link to="/hospitals" key={page}>
                                         <MenuItem className={styles.pageName} key={page} onClick={handleCloseNavMenu}>
                                             <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                                         </MenuItem>
@@ -64,7 +64,7 @@ const Navbar = () => {
                             </Menu>
                         </Box>
                         <Link>
-                            <img src="assets/Logo.png" alt="Logo" className={styles.logoImage} />
+                            <img src="/assets/Logo.png" alt="Logo" className={styles.logoImage} />
                         </Link>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "center", gap: "" } }}>
                             {pages.map((page) => (

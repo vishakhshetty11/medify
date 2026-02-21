@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import styles from "./SearchDiv.module.css"
 import { TextField, MenuItem, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import MedifyButton from './Utility/MedifyButton';
-function SearchDiv({ fetchHospital }) {
+import { useLocation, useNavigate } from 'react-router-dom';
+function SearchDiv({ sendStateCity, State = "", City = "" }) {
+    const location = useLocation();
+    const navigation = useNavigate();
     const [selectedState, setSelectedState] = useState("");
     const [selectedCity, setSelectedCity] = useState("");
     const [state, setState] = useState([]);
@@ -40,12 +42,22 @@ function SearchDiv({ fetchHospital }) {
 
     useEffect(() => {
         if (selectedState.trim() != "") {
+            setSelectedCity("");
             getCity(selectedState);
+            if (City) setSelectedCity(City);
         }
     }, [selectedState])
+    useEffect(() => {
+        if (State) setSelectedState(State);
+    }, [State, City]);
     const handleClick = () => {
         if (selectedState.trim() !== "" && selectedCity.trim() !== "") {
-            fetchHospital(selectedState, selectedCity)
+            if (location.pathname !== "/hospitals") {
+                navigation(`/hospitals/${selectedState}/${selectedCity}`);
+            }
+            else {
+                sendStateCity(selectedState, selectedCity)
+            }
         }
         else {
             alert("Select Both State and City");

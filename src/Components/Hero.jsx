@@ -11,7 +11,7 @@ function Hero() {
                 <p className={styles.heroPara}>Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.</p>
                 <MedifyButton title="Find Centers" />
             </div>
-            <img className={styles.heroImage} src='assets/hero_image.png' alt="heroImage" />
+            <img className={styles.heroImage} src='/assets/hero_image.png' alt="heroImage" />
             <HeroSearchCard />
         </div>
     )

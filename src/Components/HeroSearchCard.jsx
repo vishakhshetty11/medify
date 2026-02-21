@@ -12,8 +12,8 @@ function HeroSearchCard() {
             </div>
             <div className={styles.iconCardDiv}>
                 {
-                    cardTitle.map(title => (
-                        <IconCard title={title} />
+                    cardTitle.map((title, index) => (
+                        <IconCard key={index} title={title} />
                     ))
                 }
 
