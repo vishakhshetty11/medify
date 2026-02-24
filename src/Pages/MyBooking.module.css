@@ -1,0 +1,49 @@
+.myBookingMainDiv {
+  position: relative;
+  background: var(--light-blue);
+  margin-top: 70px;
+}
+.myBookingHead {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  padding: 0px;
+  width: 80%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.myBookingHeading {
+  font-size: 25px;
+  display: inline-block;
+  color: #fff;
+}
+.inputDiv{
+    display: inline-block;
+    float : right;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.searchInput{
+    width: 300px;
+    background-color: #fafbfe;
+    border: 1px solid #b7b7b7;
+    color: #b7b7b7;
+    height: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.searchInput:focus-visible{
+    outline: none;
+}
+.contentDiv {
+  width: 80%;
+  margin: 0px auto;
+  padding: 80px 0;
+}
+
+.advertiseImage {
+  width: 100%;
+}

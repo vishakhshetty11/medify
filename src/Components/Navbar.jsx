@@ -59,7 +59,11 @@ const Navbar = () => {
                                     </Link>
                                 ))}
                                 <MenuItem >
-                                    <MedifyButton title="My Bookings" />
+                                    <Button className={styles.buttonLink} component={Link} to="/my-bookings"
+                                        sx={{ my: 2, color: 'white', display: 'block' }}
+                                    >
+                                        My Bookings
+                                    </Button>
                                 </MenuItem>
                             </Menu>
                         </Box>
@@ -75,7 +79,11 @@ const Navbar = () => {
                                     {page}
                                 </Button>
                             ))}
-                            <MedifyButton title="My Bookings" />
+                            <Button className={styles.buttonLink} component={Link} to="/my-bookings"
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                My Bookings
+                            </Button>
                         </Box>
                     </Toolbar>
                 </Container>

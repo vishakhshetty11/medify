@@ -3,10 +3,10 @@ import style from "./HospitalCard.module.css";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { IconButton } from "@mui/material";
+import { IconButton, Button } from "@mui/material";
 import dayjs from "dayjs";
 
-function HospitalCard({ data }) {
+function HospitalCard({ data, enableBooking = true }) {
   const scrollRef = useRef(null);
   const [selectedDate, setSelectedDate] = useState(dayjs());
   const [showTimeSlot, setShowTimeSlot] = useState(false);
@@ -38,7 +38,7 @@ function HospitalCard({ data }) {
   const handleBookVisit = (id) => {
     let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-    const existingIndex = bookings.findIndex((b) => b.providerId === id);
+    const existingIndex = bookings.findIndex((b) => b["Provider ID"] === id);
     if (existingIndex !== -1) {
       // Update existing booking
       //setSelectedDate(bookings[existingIndex].date);
@@ -64,7 +64,7 @@ function HospitalCard({ data }) {
       let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
       const existingIndex = bookings.findIndex(
-        (b) => b.providerId === newBooking.providerId
+        (b) => b["Provider ID"]=== newBooking["Provider ID"]
       );
 
       if (existingIndex !== -1) {
@@ -92,7 +92,12 @@ function HospitalCard({ data }) {
   }
 
   return (
-    <div className={style.HospitalMainCard} onClick={() => (handleBookVisit(data["Provider Id"]))} >
+    <div className={style.HospitalMainCard}
+      onClick={() => {
+        if (enableBooking) {
+          handleBookVisit(data["Provider ID"]);
+        }
+      }} >
       {/* Hospital Image */}
       <div className={style.imageContainer}>
         <img
@@ -105,23 +110,34 @@ function HospitalCard({ data }) {
       {/* Hospital Details */}
       <div className={style.contentContainer}>
         <h3 className={style.hospitalName}>{data["Hospital Name"]}</h3>
+        {!enableBooking &&
+          <div className={style.dateTimeButtonDiv}>
+            <Button className={style.timeButton} variant="outlined" sx={{ marginRight: "15px" }} >
+              {data.time}
+            </Button>
+            <Button className={style.dateButton} variant="outlined" >
+              {dayjs(data.date).format("D MMMM YYYY")}
+            </Button>
+          </div>
+        }
         <p className={style.hospitalType}>{data["Hospital Type"]}</p>
         <p className={style.hospitalType}>more</p>
-
-        <p className={style.hospitalType}>
-          <span className={style.free}>FREE </span>
-          <span className={style.amount}>₹500</span> Consultation Fee at clinic
-        </p>
-
+        {enableBooking &&
+          <p className={style.hospitalType}>
+            <span className={style.free}>FREE </span>
+            <span className={style.amount}>₹500</span> Consultation Fee at clinic
+          </p>
+        }
         <div className={style.bookingButtonDiv}>
           <span className={style.rating}>
             <ThumbUpIcon sx={{ fontSize: "13px" }} />
             <span>{data["Hospital overall rating"]}</span>
           </span>
-
-          <button className={style.bookingButton} onClick={bookAppointment}>
-            Book FREE Center Visit
-          </button>
+          {enableBooking &&
+            <button className={style.bookingButton} onClick={bookAppointment}>
+              Book FREE Center Visit
+            </button>
+          }
         </div>
         {showTimeSlot && <>
           {/* DATE SLIDER */}
@@ -139,7 +155,8 @@ function HospitalCard({ data }) {
                     key={index}
                     className={`${style.dateItem} ${isSelected ? style.activeDate : ""
                       }`}
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setSelectedDate(date);
                       scrollRef.current.children[index].scrollIntoView({
                         behavior: "smooth",

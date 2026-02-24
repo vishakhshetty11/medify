@@ -9,3 +9,9 @@
     text-transform: none !important;
     color: black !important;
 }
+.buttonLink{
+    border: none !important;
+    color: white !important;
+    background-color: var(--primary-color) !important;
+    margin-left: 10px !important;
+}

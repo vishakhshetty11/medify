@@ -36,7 +36,30 @@
   color: #14bef0;
   text-transform: capitalize !important;
   font-size: 15px;
-  margin-bottom: 0;
+  margin: 0;
+  display: inline-block;
+}
+.dateTimeButtonDiv {
+  display: inline-block;
+  float: right;
+}
+.timeButton {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.timeButton:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.dateButton {
+  border-color: #007100 !important;
+  color: #007100 !important;
+  text-transform: capitalize !important;
+}
+.dateButton:hover {
+  background-color: #007100 !important;
+  color: #fff !important;
+  text-transform: capitalize !important;
 }
 .hospitalType {
   margin: 0;
@@ -132,15 +155,15 @@
   cursor: pointer;
   height: 30px;
 }
-.timeButton:hover{
-    background-color:  var(--primary-color);
-    border: none;
-    color: #fff;
+.timeButton:hover {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
 }
-.activeTime{
-    background-color:  var(--primary-color);
-    border: none;
-    color: #fff;
+.activeTime {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
 }
 
 .timeAndPeriodDiv {

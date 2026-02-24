@@ -52,54 +52,6 @@ function Hospitals() {
     }
   }, [selectedState, selectedCity])
 
-  function SlotCalendar() {
-  const [selectedDate, setSelectedDate] = useState(dayjs());
-  const dates = [0, 1, 2].map((d) => dayjs().add(d, "day"));
-
-  return (
-    <div style={{ padding: 20 }}>
-      {/* Date selector */}
-      <div style={{ display: "flex", gap: 20 }}>
-        {dates.map((date, index) => (
-          <div
-            key={index}
-            onClick={() => setSelectedDate(date)}
-            style={{
-              cursor: "pointer",
-              borderBottom:
-                selectedDate.isSame(date, "day") ? "3px solid blue" : ""
-            }}
-          >
-            <h4>
-              {index === 0
-                ? "Today"
-                : index === 1
-                ? "Tomorrow"
-                : date.format("ddd, D MMM")}
-            </h4>
-            <span style={{ color: "green" }}>17 Slots Available</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Time slots */}
-      {Object.keys(timeSlots).map((period) => (
-        <div key={period} style={{ marginTop: 20 }}>
-          <h4>{period}</h4>
-
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            {timeSlots[period].map((time, index) => (
-              <Button key={index} variant="outlined">
-                {time}
-              </Button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
   return (
     <div className={styles.hospitalsMainDiv}>
       <LowerNav />
