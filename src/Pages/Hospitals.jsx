@@ -65,7 +65,7 @@ function Hospitals() {
             :
             hospitalData.length > 0 ?
               <>
-                <h1 className={styles.hospitalCount}>{hospitalData.length} medical centers available in {selectedCity}</h1>
+                <h1 className={styles.hospitalCount}>{hospitalData.length} medical centers available in {selectedCity.toLowerCase()}</h1>
                 <p className={styles.hospitalSubtitle}><CheckCircleOutlineIcon /> Book appointments with minimum wait-time & verified doctor details</p>
                 <Grid container spacing={2}>
                   <Grid size={{ xs: 12, md: 9 }}>
