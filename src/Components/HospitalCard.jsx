@@ -64,7 +64,7 @@ function HospitalCard({ data, enableBooking = true }) {
       let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
       const existingIndex = bookings.findIndex(
-        (b) => b["Provider ID"]=== newBooking["Provider ID"]
+        (b) => b["Provider ID"] === newBooking["Provider ID"]
       );
 
       if (existingIndex !== -1) {
@@ -165,11 +165,13 @@ function HospitalCard({ data, enableBooking = true }) {
                     }}
                   >
                     <div className={style.dateTitle}>
-                      {index === 0
-                        ? "Today"
-                        : index === 1
-                          ? "Tomorrow"
-                          : date.format("ddd, D MMM")}
+                      <p style={{margin:0}}>
+                        {index === 0
+                          ? "Today"
+                          : index === 1
+                            ? "Tomorrow"
+                            : date.format("ddd, D MMM")}
+                      </p>
                     </div>
 
                     <div className={style.slotText}>
